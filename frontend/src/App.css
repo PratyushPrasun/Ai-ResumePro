@@ -1,0 +1,215 @@
+/* ═══════════════════════════════════════════════════
+   APP LAYOUT
+   ═══════════════════════════════════════════════════ */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ═══════════════════════════════════════════════════
+   NAVBAR STYLES  
+   ═══════════════════════════════════════════════════ */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+  background: var(--primary-soft);
+}
+
+.nav-link--active {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.nav-link--active:hover {
+  background: linear-gradient(135deg, var(--primary-hover), var(--accent));
+  color: white !important;
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.nav-user-name {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--primary-soft);
+  border-radius: 20px;
+}
+
+.nav-logout-btn {
+  background: transparent;
+  border: none;
+  color: var(--danger);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  font-family: var(--font-family);
+}
+
+.nav-logout-btn:hover {
+  background: var(--danger-soft);
+}
+
+.nav-cta-btn {
+  padding: 0.5rem 1.25rem !important;
+  font-size: 0.85rem !important;
+  border-radius: 20px !important;
+}
+
+.theme-toggle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  margin-left: 0.25rem;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--warning);
+  border-color: var(--warning);
+  background: var(--warning-soft);
+  transform: scale(1.05);
+}
+
+/* Mobile Nav */
+.nav-mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hamburger-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.hamburger-btn:hover {
+  background: var(--primary-soft);
+}
+
+.mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 200;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: var(--bg-elevated);
+  border-left: 1px solid var(--border-color);
+  z-index: 201;
+  overflow-y: auto;
+}
+
+.mobile-drawer-content {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mobile-drawer-content .nav-link {
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  border-radius: var(--radius-md);
+}
+
+.mobile-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--primary-soft);
+  border-radius: var(--radius-md);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.mobile-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.mobile-logout {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  border-radius: var(--radius-md);
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+  .nav-mobile-actions {
+    display: flex;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   PAGE TRANSITIONS
+   ═══════════════════════════════════════════════════ */
+.page-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

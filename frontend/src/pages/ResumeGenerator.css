@@ -1,0 +1,670 @@
+/* ═══════════════════════════════════════════════════
+   Resume Generator Page Styles
+   ═══════════════════════════════════════════════════ */
+
+.generator-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.generator-page h1 {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--text-heading);
+}
+
+.generator-page h1 span {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.generator-page .subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+}
+
+/* ─── Mode Toggle ─── */
+.mode-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 2rem;
+    background: var(--bg-input);
+    border-radius: var(--radius-md);
+    padding: 4px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid var(--border-color);
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-family);
+}
+
+.mode-btn.active {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.mode-btn:hover:not(.active) {
+    color: var(--text-main);
+    background: var(--primary-soft);
+}
+
+/* ─── Form Styles ─── */
+.form-section {
+    margin-bottom: 1.5rem;
+}
+
+.form-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-group {
+    margin-bottom: 0.75rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-main);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    font-family: var(--font-family);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+/* ─── Repeatable Group ─── */
+.repeatable-group {
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    transition: border-color var(--transition-fast);
+}
+
+.repeatable-group:hover {
+    border-color: var(--primary);
+}
+
+.repeatable-group .remove-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: var(--danger-soft);
+    border: none;
+    color: var(--danger);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+    font-size: 1rem;
+}
+
+.repeatable-group .remove-btn:hover {
+    background: var(--danger);
+    color: white;
+}
+
+.add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    background: var(--primary-soft);
+    border: 1px dashed var(--primary);
+    border-radius: var(--radius-sm);
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    font-family: var(--font-family);
+}
+
+.add-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-style: solid;
+}
+
+/* ─── Tags Input ─── */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0.5rem;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    min-height: 42px;
+    cursor: text;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.tags-container:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.tags-container .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: linear-gradient(135deg, var(--primary-soft), var(--accent-soft));
+    color: var(--text-main);
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    border: 1px solid var(--border-color);
+}
+
+.tags-container .tag button {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0;
+}
+
+.tags-container .tag button:hover {
+    color: var(--danger);
+}
+
+.tags-container input {
+    flex: 1;
+    min-width: 120px;
+    border: none;
+    background: transparent;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    outline: none;
+    padding: 0.25rem;
+    font-family: var(--font-family);
+}
+
+/* ─── Results Layout ─── */
+.results-container {
+    animation: fadeIn var(--transition-base);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.results-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-heading);
+}
+
+.btn-outline {
+    background: transparent !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+}
+
+.btn-outline:hover {
+    border-color: var(--primary) !important;
+    color: var(--primary) !important;
+    background: var(--primary-soft) !important;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: minmax(700px, 1fr) 400px;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (max-width: 1200px) {
+    .results-grid {
+        grid-template-columns: 1fr 350px;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ─── Resume Preview ─── */
+.resume-preview {
+    background: #ffffff;
+    color: #1a1a2e;
+    padding: 4rem; /* Standard resume padding */
+    border-radius: 4px; /* Sharper paper edges */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15), 0 0 40px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter', sans-serif;
+    min-height: 1000px;
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+}
+
+.resume-preview .preview-actions {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 0.75rem 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.resume-preview .preview-actions h3 {
+    font-size: 0.95rem;
+    color: #3b82f6;
+    font-family: var(--font-family);
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    font-family: var(--font-family);
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.download-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.resume-preview h2.resume-name {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #0f172a;
+    margin-bottom: 0.3rem;
+}
+
+.resume-preview .contact-line {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+    font-family: var(--font-family);
+    word-break: break-all;
+}
+
+.resume-preview .section-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #1e293b;
+    border-bottom: 1.5px solid #334155;
+    padding-bottom: 0.2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-family);
+}
+
+.resume-preview .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 0.5rem;
+}
+
+.resume-preview .exp-header .role {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #0f172a;
+}
+
+.resume-preview .exp-header .duration {
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.resume-preview .company {
+    font-style: italic;
+    font-size: 0.82rem;
+    color: #475569;
+    margin-bottom: 0.3rem;
+}
+
+.resume-preview ul {
+    padding-left: 1.2rem;
+    margin: 0.3rem 0 0.5rem;
+}
+
+.resume-preview li {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #334155;
+    margin-bottom: 0.15rem;
+}
+
+/* Editable fields */
+.resume-preview .editable {
+    cursor: text;
+    border-radius: 3px;
+    padding: 1px 3px;
+    transition: background var(--transition-fast);
+}
+
+.resume-preview .editable:hover {
+    background: #eff6ff;
+}
+
+.resume-preview .editable:focus {
+    outline: 2px solid #3b82f6;
+    background: #eff6ff;
+}
+
+/* ─── Score Sidebar ─── */
+.score-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.score-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    transition: all var(--transition-fast);
+}
+
+.score-card:hover {
+    border-color: var(--primary);
+}
+
+[data-theme="light"] .score-card {
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: none;
+}
+
+.score-card h4 {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.75rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.keyword-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--bg-input);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.keyword-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.8s ease;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+}
+
+.tag-list .tag-green {
+    background: var(--success-soft);
+    color: var(--success);
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.tag-list .tag-red {
+    background: var(--danger-soft);
+    color: var(--danger);
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.tag-list .tag-blue {
+    background: var(--primary-soft);
+    color: var(--primary);
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.suggestion-card {
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.suggestion-card h5 {
+    font-size: 0.85rem;
+    color: var(--text-heading);
+    margin-bottom: 0.3rem;
+}
+
+.suggestion-card p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.2rem;
+}
+
+.suggestion-card .tech {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-style: italic;
+}
+
+/* ─── Loading Overlay ─── */
+.generator-loading {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.generator-loading .spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid var(--border-color);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: gspin 1s linear infinite;
+    margin: 0 auto 1.5rem;
+}
+
+@keyframes gspin {
+    to { transform: rotate(360deg); }
+}
+
+.generator-loading p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.generator-loading .loading-steps {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.generator-loading .step {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.generator-loading .step.done {
+    color: var(--success);
+}
+
+/* ─── Upload Area ─── */
+.upload-area {
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    background: var(--bg-input);
+    transition: all var(--transition-fast);
+    margin-bottom: 1rem;
+}
+
+.upload-area:hover {
+    border-color: var(--primary);
+    background: var(--primary-soft);
+}
+
+.upload-area p {
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+}
+
+.upload-area .file-name {
+    color: var(--success);
+    font-weight: 600;
+}
+
+/* ─── Target Role Input ─── */
+.target-role-input {
+    margin-bottom: 1.5rem;
+}
+
+.target-role-input label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.target-role-input input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: var(--bg-input);
+    border: 2px solid var(--accent);
+    border-radius: var(--radius-md);
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    font-family: var(--font-family);
+}
+
+.target-role-input input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-soft);
+}
